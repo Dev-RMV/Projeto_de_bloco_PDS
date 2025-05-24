@@ -36,10 +36,10 @@ Esses valores são exibidos em tempo real no display OLED I2C, utilizando as bib
 ## Notas Técnicas
 
 - O endereço padrão do display I2C é `0x3C`.
-- Recomenda-se ao menos **1 KB de RAM disponível** para armazenar o buffer gráfico da tela, conforme indicado pela documentação da **Adafruit**:
+- A tela OLED 128×64 baseada no driver **SSD1306** exige aproximadamente **1 KB de RAM** para armazenar o framebuffer gráfico. Isso é especialmente relevante ao usar a biblioteca `Adafruit_SSD1306`, que mantém o buffer na memória RAM para permitir operações gráficas.
 
-  > “Bibliotecas como a Adafruit_SSD1306 e Adafruit_GFX permitem inicializar o display em poucos comandos (`display.begin(SSD1306_SWITCHCAPVCC, 0x3C);`) e desenhar textos ou gráficos diretamente com funções como `display.setCursor()` e `display.print()`. Recomenda-se buffer de RAM de 1 KB para a tela completa.”  
-  > — *ADAFT781 – Adafruit Monochrome 128×64 OLED Graphic Display, Adafruit Learning System, 2020.*
+> “The library uses a 128x64 framebuffer (1KB of RAM) and is suitable for most Arduino boards.”  
+> — *Adafruit Learning System: [Monochrome OLED Breakouts](https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples)*
 
 ## Observações
 
@@ -49,8 +49,6 @@ Esses valores são exibidos em tempo real no display OLED I2C, utilizando as bib
 ## Aplicação Científica
 
 Este projeto foi desenvolvido no contexto de um artigo científico. O `README.md` serve também como material complementar para fins acadêmicos.  
-**Autores:** [Rodrigo das Mercês Vianna, João Rafael Broz dos Santos, Guilherme Saraiva Gomes de Carvalho]  
-**Orientador:** [Vitor Amadeu Souza]  
-**Instituição:** [Instituto Infnet]
-
----
+**Autores:** Rodrigo das Mercês Vianna, João Rafael Broz dos Santos, Guilherme Saraiva Gomes de Carvalho  
+**Orientador:** Vitor Amadeu Souza  
+**Instituição:** Instituto Infnet
