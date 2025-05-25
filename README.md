@@ -43,8 +43,7 @@ Esses valores são exibidos em tempo real no display OLED I2C, utilizando as bib
 
 ## Observações
 
-- O código realiza uma compensação do OFFSET da leitura analógica com base nos valores máximos e mínimos medidos, assumindo que a tensão de referência ideal do sinal AC deveria estar em 511,5 (meio do range de 10 bits do ADC).
-- A inicialização do display está localizada dentro do `loop()`, o que pode causar reinicializações constantes — o ideal seria mover `display.begin()` para dentro da função `setup()`.
+- O código realiza uma compensação do OFFSET da leitura analógica com base nos valores máximos e mínimos medidos, assumindo que a tensão de referência ideal do sinal AC deveria estar em 511,5 (meio do range de 10 bits do ADC). Essa compensação corrige pequenas descalibrações do módulo ZMPT101B, mas se a descalibração for tamanha ao ponto de "ceifar" o formato de onda, esta compensação falha e os cálculos ficam prejudicados.
 
 ## Aplicação Científica
 

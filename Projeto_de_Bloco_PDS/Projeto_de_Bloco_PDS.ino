@@ -80,12 +80,5 @@ void loop() {
   Serial.print("Ajuste fino: ");
   Serial.println(ajuste);
 
-  
-
-
-
-
-
-  display.display();
-  
+  display.display();  
 }
